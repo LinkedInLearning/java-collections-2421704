@@ -1,5 +1,7 @@
 package com.linkedin.collections;
 
-public class Contract {
+public interface Contract {
 
+	public void term1();
+	
 }
