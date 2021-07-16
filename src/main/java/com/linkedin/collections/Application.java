@@ -14,4 +14,5 @@ public class Application {
 	private static double getPotentialRevenue(Room room1, Room room2) {
 		return room1.getRate() + room2.getRate();
 	}
+
 }
