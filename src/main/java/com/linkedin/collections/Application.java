@@ -12,7 +12,7 @@ public class Application {
 		Room piccadilly = new Room("Piccadilly", "Guest Room", 3, 125.00);
 		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
 		
-		Collection<Room> rooms = List.of(cambridge, manchester);
+		Collection<Room> rooms = List.of(cambridge, manchester, piccadilly, oxford);
 		double total = getPotentialRevenue(rooms);
 		System.out.println(total);
 	}

@@ -13,12 +13,16 @@ public class ApplicationWithArrays {
 		Room piccadilly = new Room("Piccadilly", "Guest Room", 3, 125.00);
 		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
 
-		Room[] rooms = new Room[2];
+		Room[] rooms = new Room[3];
 		rooms[0] = cambridge;
 		rooms[1] = manchester;
 		rooms[2] = piccadilly;
 
-		double total = getPotentialRevenue(rooms);
+		Room[] moreRooms = new Room[4];
+		System.arraycopy(rooms, 0, moreRooms, 0, rooms.length);
+		moreRooms[moreRooms.length - 1] = oxford;
+
+		double total = getPotentialRevenue(moreRooms);
 		System.out.println(total);
 	}
 
