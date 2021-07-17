@@ -2,8 +2,9 @@ package com.linkedin.collections;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.Collection;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,35 +31,36 @@ class RoomServiceTest {
 
 	}
 
+	//Challenge 02_10 Tests
+
 	@Test
-	void testCreateRoom() {
+	void testHasRoom() {
 
-		this.service.createRoom("Westminister", "Premiere Room", 4, 200.00);
-
-		assertEquals(4, this.service.getInventory().size());
+		assertFalse(this.service.hasRoom(this.manchester));
+		assertTrue(this.service.hasRoom(this.cambridge));
 	}
 
 	@Test
-	void testCreateRooms() {
-		Room[] newRooms = { this.westminister, this.oxford, this.manchester };
+	void testAsArray() {
+		
+		Room[] rooms = this.service.asArray();
 
-		this.service.createRooms(newRooms);
+		assertEquals(3, rooms.length);
+		assertEquals(this.piccadilly, rooms[0]);
+		assertEquals(this.cambridge, rooms[1]);
+		assertEquals(this.victoria, rooms[2]);
 
-		assertEquals(6, this.service.getInventory().size());
 	}
 
 	@Test
-	void testRemoveRoom() {
+	void testGetByType() {
+		
+		Collection<Room> guestRooms = this.service.getByType("Guest Room");
 
-		this.service.removeRoom(new Room("Victoria", "Suite", 5, 225.00));
+		assertEquals(2, guestRooms.size());
+		assertTrue(guestRooms.stream().allMatch(r -> r.getType().equals("Guest Room")));
+		assertEquals(3, this.service.getInventory().size());
 
-		assertEquals(2, this.service.getInventory().size());
-		assertFalse(this.service.getInventory().contains(victoria));
-	}
-
-	@Test
-	void testGetInventory() {
-		assertNotNull(this.service.getInventory());
 	}
 
 }
