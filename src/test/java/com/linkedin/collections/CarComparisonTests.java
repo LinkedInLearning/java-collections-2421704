@@ -31,6 +31,7 @@ class CarComparisonTests {
 
 	@AfterEach
 	public void tearDown() throws Exception {
+		System.out.format("%nResults%n");
 		this.cars.stream()
 			.map(c -> String.format("%s %s", c.getMake(), c.getModel()))
 			.forEach(System.out::println);	
