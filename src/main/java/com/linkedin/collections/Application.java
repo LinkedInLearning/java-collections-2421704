@@ -17,25 +17,14 @@ public class Application {
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
 
 		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister));
-
-		Iterator<Room> iterator = rooms.iterator();
-//		System.out.println(iterator.next());
-//		System.out.println(iterator.next());
-//		System.out.println(iterator.next());
 		
-		//comment these out as I go along
-		while(iterator.hasNext()) {
-			Room room = iterator.next();
-			System.out.println(room.getName());
+		for(Room room : rooms) {
+			
+			if(room.getType().equals("Suite")) {
+				rooms.remove(room);
+			}
+			
 		}
 		
-		for(Iterator<Room> i = rooms.iterator(); i.hasNext();) {
-			Room room = i.next();
-			System.out.println(room.getName());
-		}
-
-		for (Room room : rooms) {
-			System.out.println(room.getName());
-		}
 	}
 }
