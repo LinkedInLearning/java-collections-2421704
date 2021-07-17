@@ -25,7 +25,7 @@ public class Application {
 			.filter(Room::isPetFriendly)
 			.forEach(room -> petFriendlyRooms.add(room));
 		
-		System.out.println(rooms);
+		System.out.println(petFriendlyRooms);
 		
 	}
 }
