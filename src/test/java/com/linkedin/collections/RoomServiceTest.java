@@ -31,8 +31,6 @@ class RoomServiceTest {
 
 	}
 
-	//Challenge 02_10 Tests
-
 	@Test
 	void testHasRoom() {
 
