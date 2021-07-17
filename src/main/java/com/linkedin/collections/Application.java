@@ -1,24 +1,17 @@
 package com.linkedin.collections;
 
-import java.util.ArrayDeque;
+import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashSet;
 
 public class Application {
 
 	public static void main(String[] args) {
 		
-		Collection<String> c = new ArrayDeque<>();
-		
-		c.add("snowboard");
-		c.add("running shoes");
-		c.add("linux");
-		c.add("books");
-		c.add("snowboard");
-		
-		Collection<String> favoriteThings = new HashSet<>(c);
-		
-		System.out.println(favoriteThings);
+		Collection c = new ArrayList(); //Same Collection Type, Different Element Type
+		c.add("Cambridge");
+
+		Collection c2 = new ArrayList(); //Same Collection Type, Different Element Type
+		c.add(new Room("Cambridge", "Suite", 6, 250.0));
 		
 	}
 
