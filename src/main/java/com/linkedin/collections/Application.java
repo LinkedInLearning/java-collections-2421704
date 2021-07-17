@@ -17,14 +17,19 @@ public class Application {
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
 
 		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister));
+		Collection<Room> removeRooms = new ArrayList<>();
 		
 		for(Room room : rooms) {
 			
 			if(room.getType().equals("Suite")) {
-				rooms.remove(room);
+				removeRooms.add(room);
 			}
 			
 		}
+		
+		rooms.removeAll(removeRooms);
+		
+		System.out.println(rooms);
 		
 	}
 }
