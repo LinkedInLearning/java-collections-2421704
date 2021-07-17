@@ -11,8 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
 
-import com.linkedin.collections.Car;
-
 class CarComparisonTests {
 
 	Collection<Car> cars;
@@ -31,6 +29,7 @@ class CarComparisonTests {
 
 	@AfterEach
 	public void tearDown() throws Exception {
+		System.out.format("%nResults%n");
 		this.cars.stream()
 			.map(c -> String.format("%s %s", c.getMake(), c.getModel()))
 			.forEach(System.out::println);	
