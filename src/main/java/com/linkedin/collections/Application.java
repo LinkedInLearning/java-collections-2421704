@@ -20,13 +20,9 @@ public class Application {
 		oxford.setPetFriendly(true);
 		victoria.setPetFriendly(true);
 		
-		for(Room room : rooms) {
-			
-			if(room.isPetFriendly()) {
-				System.out.println(room.getName());
-			}
-			
-		}
+		rooms.stream()
+			.filter(Room::isPetFriendly)
+			.forEach(room -> System.out.println(room.getName()));
 		
 	}
 }
