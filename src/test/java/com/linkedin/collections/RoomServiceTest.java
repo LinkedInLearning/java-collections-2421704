@@ -1,5 +1,6 @@
 package com.linkedin.collections;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -34,7 +35,7 @@ class RoomServiceTest {
 
 		this.service.createRoom("Westminister", "Premiere Room", 4, 200.00);
 
-		assertTrue(this.service.getInventory().size() == 4);
+		assertEquals(4, this.service.getInventory().size());
 	}
 
 	@Test
@@ -43,7 +44,7 @@ class RoomServiceTest {
 
 		this.service.createRooms(newRooms);
 
-		assertTrue(this.service.getInventory().size() == 6);
+		assertEquals(6, this.service.getInventory().size());
 	}
 
 	@Test
@@ -51,6 +52,7 @@ class RoomServiceTest {
 
 		this.service.removeRoom(new Room("Victoria", "Suite", 5, 225.00));
 
+		assertEquals(2, this.service.getInventory().size());
 		assertFalse(this.service.getInventory().contains(victoria));
 	}
 
