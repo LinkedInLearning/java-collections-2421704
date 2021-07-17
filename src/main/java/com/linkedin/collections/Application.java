@@ -16,20 +16,17 @@ public class Application {
 		Room victoria = new Room("Victoria", "Suite", 5, 225.00);
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
 
-		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister));
-		Collection<Room> removeRooms = new ArrayList<>();
+		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister, oxford, victoria, manchester));
+		oxford.setPetFriendly(true);
+		victoria.setPetFriendly(true);
 		
 		for(Room room : rooms) {
 			
-			if(room.getType().equals("Suite")) {
-				removeRooms.add(room);
+			if(room.isPetFriendly()) {
+				System.out.println(room.getName());
 			}
 			
 		}
-		
-		rooms.removeAll(removeRooms);
-		
-		System.out.println(rooms);
 		
 	}
 }
