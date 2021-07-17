@@ -3,7 +3,6 @@ package com.linkedin.collections;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Iterator;
 
 public class Application {
 
@@ -20,9 +19,13 @@ public class Application {
 		oxford.setPetFriendly(true);
 		victoria.setPetFriendly(true);
 		
+		Collection<Room> petFriendlyRooms = new ArrayList<>();
+		
 		rooms.stream()
 			.filter(Room::isPetFriendly)
-			.forEach(room -> System.out.println(room.getName()));
+			.forEach(room -> petFriendlyRooms.add(room));
+		
+		System.out.println(rooms);
 		
 	}
 }
