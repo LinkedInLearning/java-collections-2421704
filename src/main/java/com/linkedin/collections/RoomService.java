@@ -19,7 +19,7 @@ public class RoomService {
 		return null;
 	}
 	
-	public void createRoom(String name, String type, int capacity) {
+	public void createRoom(String name, String type, int capacity, double rate) {
 	
 	// 3. Add a new Room to Room Inventory
 	

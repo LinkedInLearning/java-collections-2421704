@@ -23,16 +23,16 @@ class RoomServiceTest {
 
 		this.service = new RoomService();
 
-		this.service.createRoom("Piccadilly", "Guest Room", 3);
-		this.service.createRoom("Cambridge", "Premiere Room", 3);
-		this.service.createRoom("Victoria", "Suite", 5);
+		this.service.createRoom("Piccadilly", "Guest Room", 3, 125.00);
+		this.service.createRoom("Cambridge", "Premiere Room", 3, 175.00);
+		this.service.createRoom("Victoria", "Suite", 5, 225.00);
 
 	}
 
 	@Test
 	void testCreateRoom() {
 
-		this.service.createRoom("Westminister", "Premiere Room", 4);
+		this.service.createRoom("Westminister", "Premiere Room", 4, 200.00);
 
 		assertTrue(this.service.getInventory().size() == 4);
 	}
