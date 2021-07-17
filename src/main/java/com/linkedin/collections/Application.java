@@ -26,5 +26,7 @@ public class Application {
 			
 		}
 		
+		System.out.println(rooms);
+		
 	}
 }
