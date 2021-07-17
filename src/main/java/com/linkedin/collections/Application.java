@@ -7,11 +7,11 @@ public class Application {
 
 	public static void main(String[] args) {
 		
-		Collection c = new ArrayList(); //Same Collection Type, Different Element Type
-		c.add("Cambridge");
-
-		Collection c2 = new ArrayList(); //Same Collection Type, Different Element Type
+		Collection<Room> c = new ArrayList<>(); //Same Collection Type, Different Element Type
 		c.add(new Room("Cambridge", "Suite", 6, 250.0));
+		
+		c.stream()
+			.forEach(e -> System.out.println(((Room)e).getType()));
 		
 	}
 
