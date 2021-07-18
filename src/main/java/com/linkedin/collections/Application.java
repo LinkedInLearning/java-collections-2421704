@@ -15,19 +15,7 @@ public class Application {
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
 		
 		Room oxfordDuplicate = new Room("Oxford", "Suite", 5, 225.0);
+
 		
-		Set<Room> otherRooms = Set.of(piccadilly, victoria);
-//		otherRooms.add(manchester);
-		
-		Set<Room> rooms = new HashSet<>();
-		rooms.add(piccadilly);
-		rooms.add(oxford);
-		rooms.add(oxford);
-		rooms.add(oxfordDuplicate);
-		
-		Set<Room> moreRooms = Set.copyOf(rooms);
-//		moreRooms.add(manchester);
-		
-		System.out.println(rooms);
 	}
 }
