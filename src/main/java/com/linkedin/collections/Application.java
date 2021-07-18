@@ -1,30 +1,48 @@
 package com.linkedin.collections;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.NavigableSet;
-import java.util.TreeSet;
 
 public class Application {
 
 	public static void main(String[] args) {
-		
-		List<Integer> numbers = Arrays.asList(500, 1500, 2500, 1000, 3000, 2000);
-		
-		NavigableSet<Integer> numberTree = new TreeSet<>(numbers);
-		
-		numberTree.headSet(1750).stream()
-		.forEach(System.out::println);
-			
-		numberTree.tailSet(1750).stream()
-		.forEach(System.out::println);
 
-		numberTree.subSet(1750, 2750).stream()
-			.forEach(System.out::println);
+		Guest john = new Guest("John", "Doe", false);
+		Guest maria = new Guest("Maria", "Doe", false);
+		Guest sonia = new Guest("Sonia", "Doe", true);
+		Guest siri = new Guest("Siri", "Doe", true);
 
-		System.out.println(numberTree.lower(1750));
+		List<Guest> checkinList = new ArrayList<>(100);
 
-		System.out.println(numberTree.higher(1750));
+		checkinList.add(john);
+		print(checkinList);
+		
+		checkinList.add(maria);
+		print(checkinList);
+		
+		checkinList.add(0, sonia);
+		print(checkinList);
+		
+		checkinList.get(2).setLoyaltyProgramMember(true);
+		checkinList.addAll(1, List.of(maria, siri));
+		
+		print(checkinList);
+		
+		checkinList.remove(checkinList.size() - 1);
+		print(checkinList);
+		
+		System.out.format("%nJohn is here %d", checkinList.indexOf(john));
+
+	}
+
+	public static void print(List<Guest> list) {
+
+		System.out.println(System.lineSeparator() + "--List Contents--");
+
+		for (int x = 0; x < list.size(); x++) {
+			Guest guest = list.get(x);
+			System.out.format("%x: %s %n", x, guest.toString());
+		}
 		
 	}
 }
