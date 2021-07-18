@@ -1,7 +1,8 @@
 package com.linkedin.collections;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Application {
 
@@ -12,36 +13,30 @@ public class Application {
 		Guest sonia = new Guest("Sonia", "Doe", true);
 		Guest siri = new Guest("Siri", "Doe", true);
 
-		List<Guest> checkinList = new ArrayList<>(100);
+		Queue<Guest> checkinQueue = new PriorityQueue<>(Comparator.comparing(Guest::isLoyaltyProgramMember).reversed());
+		
+		checkinQueue.add(john);
+		checkinQueue.add(maria);
+		checkinQueue.add(sonia);
+		checkinQueue.add(siri);
 
-		checkinList.add(john);
-		print(checkinList);
+		Guest guest = checkinQueue.remove();
+		System.out.println(guest);
 		
-		checkinList.add(maria);
-		print(checkinList);
-		
-		checkinList.add(0, sonia);
-		print(checkinList);
-		
-		checkinList.get(2).setLoyaltyProgramMember(true);
-		checkinList.addAll(1, List.of(maria, siri));
-		
-		print(checkinList);
-		
-		checkinList.remove(checkinList.size() - 1);
-		print(checkinList);
-		
-		System.out.format("%nJohn is here %d", checkinList.indexOf(john));
+		Guest guest1 = checkinQueue.element();
+		System.out.println(guest1);
 
+		print(checkinQueue);
+		
 	}
 
-	public static void print(List<Guest> list) {
+	public static void print(Queue<Guest> queue) {
 
-		System.out.println(System.lineSeparator() + "--List Contents--");
+		System.out.println(System.lineSeparator() + "--Queue Contents--");
 
-		for (int x = 0; x < list.size(); x++) {
-			Guest guest = list.get(x);
-			System.out.format("%x: %s %n", x, guest.toString());
+		int x = 0;
+		for(Guest guest : queue) {
+			System.out.format("%x: %s %n", x++, guest.toString());
 		}
 		
 	}
