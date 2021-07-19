@@ -16,25 +16,7 @@ public class Application {
 		Guest john = new Guest("John", "Doe", false);
 		Guest maria = new Guest("Maria", "Doe", true);
 		Guest sonia = new Guest("Sonia", "Doe", true);
-		
-		Map<Room, Guest> roomAssignmentMap = new HashMap<>();
-		
-		roomAssignmentMap.put(piccadilly, john);
-		roomAssignmentMap.put(westminister, maria);
-		roomAssignmentMap.put(manchester, sonia);
-		
-		System.out.println(roomAssignmentMap.get(manchester));
-	
-		Guest guest = roomAssignmentMap.remove(piccadilly);
-		roomAssignmentMap.putIfAbsent(piccadilly, roomAssignmentMap.remove(westminister));
-		roomAssignmentMap.putIfAbsent(westminister, guest);
-		
-		for(Entry<Room, Guest> entry : roomAssignmentMap.entrySet()) {
-			Room r = entry.getKey();
-			Guest g = entry.getValue();
-			System.out.format("%s : %s %s%n", r.getName(), g.getFirstName(), g.getLastName());
-		}
-		
+				
 	}
 
 }
