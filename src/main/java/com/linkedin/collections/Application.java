@@ -21,7 +21,7 @@ public class Application {
 
 		int x = 0;
 		for(Guest guest : queue) {
-			System.out.format("%x: %s %n", x++, guest.toString());
+			System.out.format("%x: %s %s %n", x++, guest.toString(), x == 1 ? "(Head)":"");
 		}
 		
 	}
