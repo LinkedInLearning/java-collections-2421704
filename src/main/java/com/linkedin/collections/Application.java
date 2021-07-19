@@ -36,18 +36,5 @@ public class Application {
 		}
 		
 	}
-	
-	public static void print(Queue<Guest> queue) {
-
-		System.out.format("%n--Queue Contents--%n");
-
-		int x = 0;
-		for(Guest guest : queue) {
-			System.out.format("%x: %s %s %n", x++, guest.toString(), x == 1 ? "(Head)":"");
-		}
-		
-		System.out.println("");
-		
-	}
 
 }
