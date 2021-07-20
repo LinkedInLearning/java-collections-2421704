@@ -20,21 +20,13 @@ public class Application {
 		List<Room> rooms = new ArrayList<>(List.of(piccadilly, oxford1, cambridge, westminister, victoria, oxford, manchester));
 		rooms.sort(Comparator.naturalOrder());
 
-//		Collections.shuffle(rooms);
-//		System.out.format("Random: %s%n", rooms.get(0).getName());
-		print(rooms);
-
+		Room newLondon = new Room("New London", "Suite", 6, 400.00);
+		int index = Collections.binarySearch(rooms, oxford);
+		rooms.add(Math.abs(++index), newLondon);
 		
-		System.out.format("%nSwapped%n");
-		Collections.swap(rooms, 0, rooms.size()-1);
-		print(rooms);
-
-		System.out.format("%nReversed%n");
-		Collections.reverse(rooms);
-		print(rooms);
-
-		System.out.format("%nRotated%n");
-		Collections.rotate(rooms, 2);
+		Comparator<Room> rateComparator = Comparator.comparing(Room::getRate);
+		System.out.println(Collections.min(rooms, rateComparator).getName());
+		System.out.println(Collections.max(rooms, rateComparator).getName());
 		print(rooms);
 
 	}
