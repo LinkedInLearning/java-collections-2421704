@@ -1,39 +1,28 @@
 package com.linkedin.collections;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Queue;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
 
 public class Application {
 
 	public static void main(String[] args) {
 
 		Room piccadilly = new Room("Piccadilly", "Guest Room", 3, 125.00);
+		Room cambridge = new Room("Cambridge", "Premiere Room", 4, 175.00);
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 175.00);
+		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
+		Room oxford1 = new Room("Oxford", "Guest Room", 5, 225.0);
+		Room victoria = new Room("Victoria", "Suite", 5, 225.0);
 		Room manchester = new Room("Manchester", "Suite", 5, 225.0);
+		
+		List<Room> rooms = new ArrayList<>(List.of(piccadilly, oxford1, cambridge, westminister, victoria, oxford, manchester));
+		Comparator<Room> priceComparator = Comparator.comparing(Room::getRate).thenComparing(Room::getType).reversed();
 
-		Guest john = new Guest("John", "Doe", false);
-		Guest maria = new Guest("Maria", "Doe", true);
-		Guest sonia = new Guest("Sonia", "Doe", true);
+		rooms.sort(priceComparator);
 		
-		Map<Room, Guest> roomAssignmentMap = new HashMap<>();
-		
-		roomAssignmentMap.put(piccadilly, john);
-		roomAssignmentMap.put(westminister, maria);
-		roomAssignmentMap.put(manchester, sonia);
-		
-		System.out.println(roomAssignmentMap.get(manchester));
-	
-		Guest guest = roomAssignmentMap.remove(piccadilly);
-		roomAssignmentMap.putIfAbsent(piccadilly, roomAssignmentMap.remove(westminister));
-		roomAssignmentMap.putIfAbsent(westminister, guest);
-		
-		for(Entry<Room, Guest> entry : roomAssignmentMap.entrySet()) {
-			Room r = entry.getKey();
-			Guest g = entry.getValue();
-			System.out.format("%s : %s %s%n", r.getName(), g.getFirstName(), g.getLastName());
-		}
+		rooms.stream()
+			.forEach(r -> System.out.format("%s %s %f %n", r.getName(), r.getType(), r.getRate()));
 		
 	}
 

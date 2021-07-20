@@ -29,14 +29,13 @@ public class BookingServiceTest {
 
 		piccadilly = new Room("Piccadilly", "Guest Room", 3, 125.00);
 		cambridge = new Room("Cambridge", "Premiere Room", 4, 175.00);
-		westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
+		westminister = new Room("Westminister", "Premiere Room", 4, 175.00);
 		oxford = new Room("Oxford", "Suite", 5, 225.0);
 		victoria = new Room("Victoria", "Suite", 5, 225.0);
-		manchester = new Room("Manchester", "Suite", 5, 250.0);
+		manchester = new Room("Manchester", "Suite", 5, 225.0);
 		Room[] rooms = { piccadilly, cambridge, westminister, oxford, victoria, manchester };
 
 		this.roomService.createRooms(rooms);
-		
 
 		john = new Guest("John", "Doe", false);
 		maria = new Guest("Maria", "Doe", true);
