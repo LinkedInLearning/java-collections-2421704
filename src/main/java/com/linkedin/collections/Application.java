@@ -16,6 +16,9 @@ public class Application {
 		Guest john = new Guest("John", "Doe", false);
 		Guest maria = new Guest("Maria", "Doe", true);
 		Guest sonia = new Guest("Sonia", "Doe", true);
+
+		
+		
 				
 	}
 
