@@ -11,11 +11,8 @@ public class ApplicationWithArrays {
 		Room piccadilly = new Room("Piccadilly", "Guest Room", 3, 125.00);
 		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
 
-		Room[] rooms = new Room[3];
-		rooms[0] = cambridge;
-		rooms[1] = manchester;
-		rooms[2] = piccadilly;
-		
+		Room[] rooms = null;
+				
 	}
 
 	private static double getPotentialRevenue(Room[] rooms) {

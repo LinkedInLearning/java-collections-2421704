@@ -13,8 +13,7 @@ public class Application {
 		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
 		
 		Collection<Room> rooms = List.of(cambridge, manchester);
-		rooms.add(manchester);
-		rooms.add(cambridge);
+
 		
 		double total = getPotentialRevenue(rooms);
 		System.out.println(total);
