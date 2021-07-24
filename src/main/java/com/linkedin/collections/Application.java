@@ -16,5 +16,7 @@ public class Application {
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
 		
 		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister));
+		
+			
 	}
 }
