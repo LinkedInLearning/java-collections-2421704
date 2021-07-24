@@ -16,9 +16,9 @@ public class Application {
 		Room victoria = new Room("Victoria", "Suite", 5, 225.00);
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
 		
-		piccadilly.setPetFriendly(true);
-
-		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister));
+		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister, oxford, victoria, manchester));
+		oxford.setPetFriendly(true);
+		victoria.setPetFriendly(true);
 		
 		for(Room room : rooms) {
 			
