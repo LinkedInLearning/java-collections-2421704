@@ -3,7 +3,6 @@ package com.linkedin.collections;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 
 public class RoomService {
 
@@ -31,7 +30,7 @@ public class RoomService {
 
 	/*
 	   3. Return a new Collection of Rooms where Room#type matches the provided String.
-	      The original array MUST NOT BE MODIFIED.
+		  The original Room Inventory collection MUST NOT BE MODIFIED.
 	*/
 		
 		return null;
