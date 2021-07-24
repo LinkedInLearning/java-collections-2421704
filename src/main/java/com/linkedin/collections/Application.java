@@ -15,12 +15,14 @@ public class Application {
 		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
 		Room victoria = new Room("Victoria", "Suite", 5, 225.00);
 		Room westminister = new Room("Westminister", "Premiere Room", 4, 200.00);
+		
+		piccadilly.setPetFriendly(true);
 
 		Collection<Room> rooms = new ArrayList<>(Arrays.asList(piccadilly, cambridge, westminister));
 		
 		for(Room room : rooms) {
 			
-			if(room.getType().equals("Suite")) {
+			if(room.isPetFriendly()) {
 				rooms.remove(room);
 			}
 			
