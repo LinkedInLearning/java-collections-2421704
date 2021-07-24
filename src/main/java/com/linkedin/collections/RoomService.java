@@ -10,21 +10,21 @@ public class RoomService {
 	private Collection<Room> inventory;
 
 	public RoomService() {
-		this.inventory = new LinkedHashSet<>();
+		this.inventory = new HashSet<>();
 	}
 	
 	public boolean hasRoom(Room room) {
 		
 	// 1. Returns a boolean that indicates if the Room Inventory contains a Room.
 		
-		return this.inventory.contains(room);
+		return false;
 	}
 	
 	public Room[] asArray() {
 		
 	// 2. Returns all Rooms as an Array of Rooms in the **order** they were Added.
 		
-		return this.inventory.toArray(new Room[0]);
+		return null;
 	}
 	
 	public Collection<Room> getByType(String type){
@@ -33,9 +33,8 @@ public class RoomService {
 	   3. Return a new Collection of Rooms where Room#type matches the provided String.
 	      The original array MUST NOT BE MODIFIED.
 	*/
-		Collection<Room> copy = new HashSet<>(this.inventory);
-		copy.removeIf(r -> !r.getType().equals(type));
-		return copy;
+		
+		return null;
 		
 	}
 
