@@ -18,10 +18,12 @@ public class Application {
 		oxford.setPetFriendly(true);
 		victoria.setPetFriendly(true);
 		
-		for(Room room : rooms) {
+		Iterator<Room> iterator = rooms.iterator();
+		while (iterator.hasNext()) {
+			Room room = iterator.next();
 			
 			if(room.isPetFriendly()) {
-				rooms.remove(room);
+				iterator.remove();
 			}
 			
 		}
