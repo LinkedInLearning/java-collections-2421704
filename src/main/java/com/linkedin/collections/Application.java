@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 public class Application {
 
@@ -18,14 +20,9 @@ public class Application {
 		oxford.setPetFriendly(true);
 		victoria.setPetFriendly(true);
 		
-		for(Room room : rooms) {
-			
-			if(room.isPetFriendly()) {
-				System.out.println(room.getName());
-			}
-			
-		}
-		
+		rooms.stream()
+			.filter(room -> room.isPetFriendly())
+			.forEach(room -> System.out.println(room.getName()));
 	}
 }
 
