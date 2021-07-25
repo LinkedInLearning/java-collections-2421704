@@ -20,22 +20,8 @@ public class Application {
 		victoria.setPetFriendly(true);
 		
 		rooms.stream()
-			.filter(new Predicate<Room>() {
-
-				@Override
-				public boolean test(Room room) {
-					System.out.format("Testing %s with result %b%n", room.getName(), room.isPetFriendly());
-					return room.isPetFriendly();
-				}
-				
-			}).forEach(new Consumer<Room>() {
-
-				@Override
-				public void accept(Room room) {
-					System.out.println(room.getName());
-				}
-				
-			});
+			.filter(Room::isPetFriendly)
+			.forEach(room -> System.out.println(room.getName()));
 		
 	}
 }
