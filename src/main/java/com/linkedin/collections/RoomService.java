@@ -17,14 +17,22 @@ public class RoomService {
 	public void applyDiscount(final double discount) {
 		
 		//Reduces the rate of each room by the provided discount
-	
+		this.inventory.forEach(r -> r.setRate(r.getRate() * (1-discount)));
 	}
 
 	public Collection<Room> getRoomsByCapacity(final int requiredCapacity) {
 		
 		//Returns a new collection of rooms that meet or exceed the provided capacity
+		Collection<Room> matches = new HashSet<>();
+		for (Room room : inventory) {
+			
+			if(room.getCapacity() >= requiredCapacity) {
+				matches.add(room);
+			}
+			
+		}
 		
-		return null;
+		return matches;
 		
 	}
 	
@@ -32,7 +40,10 @@ public class RoomService {
 	
 		//Returns a new collection of rooms with a rate below the provided rate and that match the provided type
 		
-		return null;
+		return this.inventory.stream()
+				.filter(r -> r.getRate() < rate)
+				.filter(r -> r.getType().equals(type))
+				.collect(Collectors.toList());
 		
 	}
 	
