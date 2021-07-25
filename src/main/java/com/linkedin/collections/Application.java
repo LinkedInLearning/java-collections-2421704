@@ -28,7 +28,8 @@ public class Application {
 			
 		}
 		
-		System.out.println(rooms);
+		rooms.stream()
+			.forEach(r -> System.out.println(r.getName()));
 		
 	}
 }
