@@ -16,7 +16,7 @@ public class Application {
 
 	public static void print(List<Guest> list) {
 
-		System.out.println(System.lineSeparator() + "--List Contents--");
+		System.out.println("%n--List Contents--%n");
 
 		for (int x = 0; x < list.size(); x++) {
 			Guest guest = list.get(x);
