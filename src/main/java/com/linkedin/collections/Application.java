@@ -30,14 +30,7 @@ public class Application {
 		print(checkinList);
 		
 		System.out.println(checkinList.indexOf(john));
-		
-		
-		
-		
-		
-		
-		
-		
+
 	}
 
 	public static void print(List<Guest> list) {
