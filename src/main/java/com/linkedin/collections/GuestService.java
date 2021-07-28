@@ -26,7 +26,6 @@ public class GuestService {
 		 *  order they were inserted.
 		 */
 
-	
 	}
 	
 	public void swapPosition(Guest guest1, Guest guest2) {
