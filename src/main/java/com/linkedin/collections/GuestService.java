@@ -68,13 +68,6 @@ public class GuestService {
 			
 		}
 		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 	public List<Guest> getCheckInList() {
