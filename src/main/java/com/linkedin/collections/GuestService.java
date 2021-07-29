@@ -11,7 +11,8 @@ public class GuestService {
 
 		/*
 		 *  1. Returns a new collection that contains guests from the provided collection
-		 *  who have indicated the provided room as their first preference. 
+		 *  who have indicated the provided room as the first preference in their preferred
+		 *  room list. 
 		 */
 		
 		return null; 
