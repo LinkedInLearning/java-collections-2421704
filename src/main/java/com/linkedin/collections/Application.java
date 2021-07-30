@@ -17,12 +17,16 @@ public class Application {
 		assignments.put(oxford, maria);
 		assignments.put(piccadilly, john);
 		
-		Guest guest = assignments.put(piccadilly, assignments.remove(oxford));
-		assignments.putIfAbsent(oxford, guest);
 		
-		System.out.println("Oxford: " + assignments.get(new Room("Oxford", "Suite", 5, 225.0)));
-		System.out.println("Piccadilly: " + assignments.get(piccadilly));
+		
+		
 				
 	}
 
 }
+
+
+
+
+
+
