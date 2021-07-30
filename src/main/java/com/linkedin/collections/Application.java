@@ -5,8 +5,9 @@ import java.util.Deque;
 public class Application {
 
 	public static void main(String[] args) {
-
-
+		
+		
+		
 	}
 
 	public static void print(Deque<String> deque) {
