@@ -18,7 +18,8 @@ public class Application {
 		List<Room> rooms = new ArrayList<>(List.of(piccadilly, oxford1, cambridge, westminister, victoria, oxford, manchester));
 
 		rooms.stream()
-			.forEach(r -> System.out.format("%s %s %f %n", r.getName(), r.getType(), r.getRate()));
+			.forEach(r -> System.out.format("%-15s %-15s %-10f %n", r.getName(), r.getType(), r.getRate()));
+	
 		
 	}
 
