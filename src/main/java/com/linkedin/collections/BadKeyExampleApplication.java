@@ -18,7 +18,7 @@ public class BadKeyExampleApplication {
 		assignments.put(piccadilly, john);
 		assignments.put(oxford, maria);
 		
-		System.out.println("Piccadilly: " + assignments.get(piccadilly));
 		System.out.println("Oxford: " + assignments.get(new RoomWithBadKey("Oxford", "Suite", 5, 225.0)));
+		System.out.println("Piccadilly: " + assignments.get(piccadilly));
 	}
 }
