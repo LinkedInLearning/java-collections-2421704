@@ -7,9 +7,9 @@ public class Application {
 	public static void main(String[] args) {
 
 		Guest john = new Guest("John", "Doe", false);
-		Guest maria = new Guest("Maria", "Doe", false);
-		Guest sonia = new Guest("Sonia", "Doe", true);
-		Guest siri = new Guest("Siri", "Doe", true);
+		Guest bob = new Guest("Bob", "Doe", false);
+		Guest sonia = new Guest("Sonia", "Doe", true); //loyalty program
+		Guest siri = new Guest("Siri", "Doe", true); //loyalty program
 
 
 
