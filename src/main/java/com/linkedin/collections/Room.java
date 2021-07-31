@@ -77,9 +77,7 @@ public class Room implements Comparable<Room>{
 
 	@Override
 	public boolean equals(Object obj) {
-		
-		System.out.format("Comparing %s with %s%n", this.name, ((Room)obj).name);
-		
+				
 		if (this == obj)
 			return true;
 		if (obj == null)
