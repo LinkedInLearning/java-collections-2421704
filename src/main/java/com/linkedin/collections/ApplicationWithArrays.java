@@ -13,6 +13,10 @@ public class ApplicationWithArrays {
 
 		Room[] rooms = null;
 				
+		
+		
+		
+		getPotentialRevenue(rooms);
 	}
 
 	private static double getPotentialRevenue(Room[] rooms) {

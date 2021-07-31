@@ -1,5 +1,6 @@
 package com.linkedin.collections;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Application {
 		Room piccadilly = new Room("Piccadilly", "Guest Room", 3, 125.00);
 		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
 		
-		Collection<Room> rooms = List.of(cambridge, manchester);
+		Collection<Room> rooms = new ArrayList<>(List.of(cambridge, manchester));
 
 		
 		double total = getPotentialRevenue(rooms);
