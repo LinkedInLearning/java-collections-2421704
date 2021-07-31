@@ -15,6 +15,8 @@ public class Application {
 		
 		List<Room> rooms = new ArrayList<>(List.of(piccadilly, oxfordGuest, cambridge, victoria, oxford));
 		
+		
+		
 		rooms.stream()
 			.forEach(r -> System.out.format("%-15s %-15s %-10f %n", r.getName(), r.getType(), r.getRate()));
 	
