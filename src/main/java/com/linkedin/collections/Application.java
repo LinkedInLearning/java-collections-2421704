@@ -14,7 +14,7 @@ public class Application {
 		Room victoria = new Room("Victoria", "Suite", 5, 225.0);
 		
 		List<Room> rooms = new ArrayList<>(List.of(piccadilly, oxford1, cambridge, victoria, oxford));
-
+		rooms.sort(Room.RATE_COMPARATOR);
 		
 		
 		
