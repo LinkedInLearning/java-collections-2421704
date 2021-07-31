@@ -14,7 +14,8 @@ public class Application {
 		Room oxford = new Room("Oxford", "Suite", 5, 225.0);
 		
 		Collection<Room> rooms = new ArrayList<>(List.of(cambridge, manchester));
-
+		rooms.add(piccadilly);
+		rooms.add(oxford);
 		
 		double total = getPotentialRevenue(rooms);
 		System.out.println(total);
