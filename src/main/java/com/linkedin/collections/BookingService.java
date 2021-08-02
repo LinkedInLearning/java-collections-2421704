@@ -11,7 +11,7 @@ public class BookingService {
 
 		/*
 		 * The provided Guest is placed in the bookings Map and
-		 * associated with the provided room, if no other guest
+		 * associated with the provided room, only if no other guest
 		 * is associated with the room.
 		 * 
 		 * Returns a boolean that indicates if the Guest was

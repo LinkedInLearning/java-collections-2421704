@@ -10,7 +10,6 @@ import org.junit.jupiter.api.Test;
 public class BookingServiceTest {
 
 	BookingService bookingService;
-
 	Room piccadilly, cambridge, westminister, oxford, victoria, manchester;
 	Guest john, maria, sonia, siri, bob, sandra;
 
@@ -36,7 +35,6 @@ public class BookingServiceTest {
 
 	@Test
 	void testBook() {
-		
 		assertTrue(this.bookingService.book(cambridge, bob));
 		assertTrue(this.bookingService.book(oxford, maria));
 		assertTrue(this.bookingService.book(victoria, sonia));
@@ -44,7 +42,6 @@ public class BookingServiceTest {
 		assertFalse(this.bookingService.book(cambridge, sandra));
 		assertFalse(this.bookingService.book(oxford, john));
 		assertFalse(this.bookingService.book(victoria, john));
-			
 	}
 	
 	@Test
