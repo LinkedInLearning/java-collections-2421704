@@ -7,7 +7,7 @@ public class BookingService {
 
 	private Map<Room, Guest> bookings = new HashMap<>();
 
-	public boolean book(Room room, Guest guest) {
+	public boolean book(Guest guest, Room room) {
 
 		/*
 		 * The provided Guest is placed in the bookings Map and
