@@ -43,7 +43,7 @@ public class BookingServiceTest {
 		assertFalse(this.bookingService.book(cambridge, siri));
 		assertFalse(this.bookingService.book(cambridge, sandra));
 		assertFalse(this.bookingService.book(oxford, john));
-		assertTrue(this.bookingService.book(victoria, john));
+		assertFalse(this.bookingService.book(victoria, john));
 			
 	}
 	
