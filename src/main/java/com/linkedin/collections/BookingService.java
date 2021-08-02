@@ -10,7 +10,7 @@ public class BookingService {
 	public boolean book(Room room, Guest guest) {
 
 		/*
-		 * The provided Guest is placed in the bookings Map and
+		 * 1. The provided Guest is placed in the bookings Map and
 		 * associated with the provided room, only if no other guest
 		 * is associated with the room.
 		 * 
@@ -24,7 +24,7 @@ public class BookingService {
 	public double totalRevenue() {
 		
 		/*
-		 * Returns a double that totals the rate of each Room booked
+		 * 2. Returns a double that totals the rate of each Room booked
 		 * in the bookings Map.
 		 */
 		return 0;
